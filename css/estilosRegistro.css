@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    background-color: #000;
+    height:100vh;
+}
+
+.side-image {
+    width: 50%;
+
+    background-image: url("img/1.jpg");
+    background-size: cover;
+}
+.formulario-container {
+    width: 50%;
+    padding: 80px 20px 0px 20px;
+    position: relative
+
+}
+
+
+.formulario-container .titulo{
+    text-align: center;
+    margin: 0 auto;
+    font-size: 50px;
+    font-style: italic;
+    color:#fff;
+
+}
+
+.formulario{
+    margin-top: 20px;
+    position: relative;
+
+}
+
+
+.formulario .nombre{
+    width: 45%;
+    float: left;
+}
+.formulario .apellido{
+    width: 50%;
+    float: right;
+}
+
+.formulario .telefono{
+    width: 100%;
+}
+
+.formulario input[type="text"]{
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid blue;
+    font-size: 16px;
+    outline: 0;
+}
+
+.formulario input[type="email"],
+.formulario input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid blue;
+    font-size: 16px;
+    outline: 0;
+}
+
+.formulario input[type="submit"]{
+    width: 200px;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid #41f365;
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+.formulario input[type="submit"]:hover{
+    background: #41f365;
+    color: #fff;
+}
+
+.formulario .error{
+    margin-top: 20px;
+    background-color: red;
+    height: 50px;
+}
+
