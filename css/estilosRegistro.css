@@ -16,7 +16,7 @@ body {
 .side-image {
     width: 50%;
 
-    background-image: url("img/1.jpg");
+    background-image: url("../img/1.jpg");
     background-size: cover;
 }
 .formulario-container {

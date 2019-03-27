@@ -1,0 +1,130 @@
+body {
+  background: url("../img/inicio.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #000000;
+  height:100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  width: 100%;
+  height: 80%;
+}
+
+#biniciar{
+    height: 30px;
+    background: #6200EE;
+    border-radius: 15px;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 140px;
+    outline: 0px;
+}
+
+.derecha form{
+  width:100%;
+  margin: 0 auto;
+}
+
+#password{
+  outline:0px;
+  background:  #ffffff;
+  border-radius: 12px;
+  border: 0;
+  width: 400px;
+  margin: 25px auto;
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#usuario{
+  outline: 0px;
+  background:  #ffffff;
+  border-radius: 12px;
+  border: 0;
+  width: 400px;
+  margin:25px auto;
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+}
+
+h1{
+  margin:80px auto;
+}
+
+div#body{
+  margin: 0px;
+  margin-top: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: 100%;
+}
+
+div#izquierda{
+  background-color: black;
+  opacity: 0.5;
+  width: 50%;
+  height: 100%;
+  float:left;
+  box-sizing: 100%;
+  text-align: center;
+  padding-top: 20%;
+}
+
+div#derecha{
+  border-left:0.1px solid orange;
+  background-color: black;
+  width: 49.99%;
+  height: 100%;
+  float:left;
+  box-sizing: 80%;
+  text-align: center;
+  padding-top: 7%;
+
+}
+/*Palabras*/
+.confetti{
+  color: #F892EA;
+  font-style: italic;
+}
+
+.Proyect{
+  color: #92F895;
+  font-style: italic;
+}
+
+.Inicia{
+  color: #F3B31C;
+  font-style: italic;
+  font-size: 60px;
+}
+
+.Diviertete{
+  color: #6485F3;
+  font-style: italic;
+  font-size: 60px;
+}
+
+#texto-registro{
+  color: white;
+}
+
+.formulario .error{
+  margin-top: 5px;
+  background-color: rgb(0, 0, 0);
+  height: 20px;
+  color: #ffffff;
+}
