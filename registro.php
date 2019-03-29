@@ -32,6 +32,8 @@
 
             $resultado = $statement->fetch();
 
+            
+
             if($resultado != false){
                 $errores .= '<li>El nombre de usuario ya existe</li>';
             }
