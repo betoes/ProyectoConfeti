@@ -1,6 +1,6 @@
 <?php session_start();
-    if (isset($_SESSION['nombre'])) {
-        header('Location: index.php');
+    if (isset($_SESSION['usuario'])) {
+        header('Location: confetiPrincipal.php');
         die();
     }
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
