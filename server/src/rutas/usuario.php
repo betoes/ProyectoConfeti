@@ -61,6 +61,4 @@ $app->post('/api/usuario/nuevo', function(Request $request, Response $response){
     } catch (PDOException $th) {
         echo '{"error": {"text":' .$th->getMessage(). '}';
     }
-
-    $sql = "INSERT INTO usuario ()nombre, apellido, password";
 });
