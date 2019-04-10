@@ -8,23 +8,18 @@
     <title>Administrador</title>
   </head>
   <body>
-    <div id="body">
-        <div>
+  <div id="contenedor" display="inline">
+        <div id="logo">
             <h1 id="titulo">Bienvenido</h1>
         </div>
-        <div>
-            <div>
-                <a id="bDatosTransmicio" href="nuevaEmision.php">Administrar Transmisiones</a>
-            </div>
-            <div align="center">
-                <a id="bPregunras" href="">Administrar preguntas</a>
-            <div align="center">
-                <a id="bControl" href="">Control de puntaje</a>
-            </div>
-            <div align="right">
-                <a id="cerrar"  href="cerrar.php">Cerrar sesión</a>
-            </div>
+        <a href="cerrar.php" id="cerrar" algin=right>Cerrar sesion</a>
+        <div id="imagen">
+        <img src="img/usuario.png" WIDTH="100" HEIGHT="100" alt="Imagen">
         </div>
-  </div>
+    <div id="opciones" align ="center"  >
+        <a href="nuevaEmision.php"><button id="botonStream">Administrar Transmisiones</button></a>
+        <a href=""><button id="botonAsk">Administrar preguntas</button></a>
+        <a href=""><button id="botonScore">Control de puntaje</button></a>   
+    </div>
   </body>
 </html>

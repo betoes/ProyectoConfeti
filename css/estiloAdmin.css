@@ -1,54 +1,83 @@
 body{
-    background: url("../img/material.jpg");
-    background-color: #0e1721;
-    text-align: center;
-    font-family: Noto Sans, sans-serif;
-  }
-
-  h1{
-    font-style: normal; 
-    margin-left: 15px;
-
-  }
-  #titulo {
-    background-color: #001121;
-    color: #f9007f;
-    padding: 50px;
-    text-align: center;
-  } 
-
-  #cerrar {
-    background-color: #00070e;
-    color: #f97a00;
-    padding: 10px;
-    text-align: left;
-  }
-
-  #bPregunras{
-    background: #002548;
-    color: #7ff900;
-    border-radius: 4px;
-    border: 0;
-    padding: 40px;
-    font-size: 20px;
-    width: 500px
+  background: url("../img/material.jpg");
+  background-color: #0e1721;
+  padding: 0;
+  margin: 0;
 }
-#bDatosTransmicio{
-    background: #002548;
-    color: #7ff900;
-    border-radius: 4px;
-    border: 0;
-    padding: 40px;
-    font-size: 20px;
-    width: 500px
+
+#contenedor{
+  position: absolute;
+  top: 0px;
+  margin: 0px;
+  margin-top: 0px;
+  width: 100%;
+  height: 200px;
+  background-color: #0e1721;
 }
-#bControl{
-    background: #002548;
-    color: #7ff900;
-    border-radius: 4px;
-    border: 0;
-    padding: 40px;
-    font-size: 20px;
-    width: 500px
+#botonStream{
+  position: absolute;
+  top: 250px;
+  width: 40%;
+  height: 100px;
+  background-color: #0e1721;
+  color: #f9007f;
+  font-size: 30px;
+  left: 30%;
 }
-  
+
+#botonAsk{
+  position: absolute;
+  top: 400px;
+  width: 40%;
+  height: 100px;
+  background-color: #0e1721;
+  color: #f9007f;
+  font-size: 30px;
+  left: 30%;
+}
+
+#botonScore{
+  position: absolute;
+  top: 550px;
+  width: 40%;
+  height: 100px;
+  background-color: #0e1721;
+  color: #f9007f;
+  font-size: 30px;
+  left: 30%;
+}
+
+h1{
+  color: #f9007f;
+  font-style: italic; 
+  margin-left: 15px;
+  font-size: 80px;
+}
+
+#cerrar {
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  margin: 10px auto;
+  background-color: #0e1721;
+  color: #f97a00;
+  text-align: right;
+  font-size: 25px;
+}
+#imagen{
+  position: absolute;
+  right: 70px;
+  top: 20px;
+  text-align: left;
+  margin: 10px auto;
+}
+#logo{
+position: absolute;
+top: 0px;
+width: 50%;
+text-align: left;
+margin:5px auto;
+background-color: #0e1721;
+margin: 0px;
+}
+ 
