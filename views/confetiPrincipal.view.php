@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/estiloInicio.css">
     <<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Confeti</title>
+    <script>countdown("Apr 31 2019 18:30:00 GMT-0500", "hh", "mm", "ss");</script>
   </head>
 
   <body>
@@ -28,6 +29,7 @@
     </div>
 
     <div id="contador">
+
       <div id="hh">
       </div>
 
@@ -47,8 +49,7 @@
 
       <div id="segs">Segundos</div>
     </div>
-
-    <script>countdown("Apr 31 2019 21:34:40 GMT-0600", "hh", "mm", "ss");</script>
-
   </body>
 </html>
+
+

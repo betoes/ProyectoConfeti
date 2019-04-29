@@ -5,7 +5,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 $app = new \Slim\App;
 
 $app->get('/api/emision', function(Request $request, Response $response){
-    $sql = "SELECT * FROM emision";
+    $sql = "SELECT fecha, hora FROM emision ORDER BY idEmision DESC LIMIT 1";
     try {
         $db = new db();
         $db = $db->conDB();
@@ -14,7 +14,7 @@ $app->get('/api/emision', function(Request $request, Response $response){
             $emisiones = $resultado->fetchAll(PDO::FETCH_OBJ);
             echo json_encode($emisiones);
         }else{
-            echo json_encode('No existen usuarios en la BBDD');
+            echo json_encode('No existen emisiones en la BBDD');
         }
         $resultado = null;
         $db = null;
@@ -44,4 +44,5 @@ $app->post('/api/emision/nuevo', function(Request $request, Response $response){
     } catch (PDOException $th) {
         echo '{"error": {"text":' .$th->getMessage(). '}';
     }
+
 });
