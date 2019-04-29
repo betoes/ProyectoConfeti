@@ -1,44 +1,54 @@
 <?php session_start();
 
+    require 'vendor/autoload.php';
+
+
     if (isset($_SESSION['usuario'])) {
-        header('Location: confetiPrincipal.php');
-        die();
+        if($_SESSION['auth'] == 1) {
+            header('Location: confetiPrincipal.php');
+            die();
+        } else if($_SESSION['auth'] == 0) {
+            header('Location: verificacion.php');
+            die();
+        }
     }
 
     $errores = '';
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $usuario = filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
+        $usuario = filter_var($_POST['usuario'], FILTER_SANITIZE_STRING);
         $password = $_POST['password'];
 
-        $dsn = 'mysql:dbname=login_practica,host=localhost';
-        $username = 'root';
-        $pass = 're2347';
+        $password = hash('sha512', $password);
 
-            try{
-                $conn = new PDO('mysql:host=localhost;dbname=login_practica', $username, $pass);
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        
-        
+    $infoLogin = "{\"usuario\": \" " . $usuario . " \", \"clave\": \" " . $password . " \" }";
 
-        $statement = $conn->prepare('SELECT * FROM usuario where usuario = :usuario AND password = :password');
-        $statement->execute(array(
-            ':usuario' => $usuario,
-            ':password' => $password
-        ));
 
-        $resultado = $statement->fetch();
+        $api = new RestClient;
+        $result = $api->post("http://localhost/server/public/api/usuario/login", $infoLogin, 
+        ['Content-Type' => 'application/json']);
+        $response = $result->decode_response();
+        $code = $result->info->http_code;
+        echo $code;
 
-        if($resultado !== false) {
-            $_SESSION['usuario'] = $usuario;
-            header('Location: confetiPrincipal.php');
-        } else {
-            $errores = 'Datos incorrectos';
+        switch ($code) {
+            case 200:
+                if($response){
+                    $_SESSION['usuario'] = $usuario;
+                    $_SESSION['auth'] = 1;
+                    header('Location: confetiPrincipal.php');
+                } else {
+                    $_SESSION['usuario'] = $usuario;
+                    $_SESSION['auth'] = 0;
+                    header('Location: verificacion.php');
+                }
+                break;
+            case 404:
+                $errores .= '<li>'. $response .'</li>';
+                break;
         }
+
     }
 
- require_once 'views/iniciarSesion.view.php';
+ require 'views/iniciarSesion.view.php';
 ?>

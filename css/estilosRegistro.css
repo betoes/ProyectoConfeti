@@ -56,6 +56,10 @@ body {
     width: 100%;
 }
 
+.formulario .usuario{
+    width: 100%;
+}
+
 .formulario input[type="text"]{
     padding: 10px;
     margin-bottom: 20px;
@@ -95,6 +99,7 @@ body {
 .formulario .error{
     margin-top: 20px;
     background-color: red;
+    color: #fff;
     height: 50px;
 }
 
