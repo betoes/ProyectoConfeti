@@ -21,13 +21,18 @@ USE `mydb` ;
 -- Table `mydb`.`Usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
+  
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(45) NOT NULL,
-  `apellido` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `nombre` VARCHAR(60) NOT NULL,
+  `apellido` VARCHAR(60) NOT NULL,
+  `correo` VARCHAR(100) NOT NULL,
+  `clave` VARCHAR(500) NOT NULL,
   `usuario` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(10) NOT NULL,
+  `pin` VARCHAR(3) NOT NULL,
+  `autenticado` INT NOT NULL DEFAULT 0,
   `isAdmin` INT NOT NULL DEFAULT 0,
+
   PRIMARY KEY (`idUsuario`))
 ENGINE = InnoDB;
 
@@ -36,12 +41,14 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Pregunta`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Pregunta` (
-  `idPregunta` INT NOT NULL,
-  `pregunta` VARCHAR(100) NOT NULL,
-  `respuestaFalsaUno` VARCHAR(100) NOT NULL,
-  `respuestaFalsa2` VARCHAR(45) NULL,
-  `respuestaFalsa3` VARCHAR(45) NULL,
-  `RespustaCorrecta` VARCHAR(45) NOT NULL,
+  
+  `idPregunta` INT NOT NULL AUTO_INCREMENT,
+  `pregunta` VARCHAR(150) NOT NULL,
+  `respuestaFalsa1` VARCHAR(100) NOT NULL,
+  `respuestaFalsa2` VARCHAR(100) NULL,
+  `respuestaFalsa3` VARCHAR(100) NULL,
+  `respuestaCorrecta` VARCHAR(100) NOT NULL,
+
   PRIMARY KEY (`idPregunta`))
 ENGINE = InnoDB;
 
@@ -50,9 +57,12 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Emision`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Emision` (
-  `idEmision` INT NOT NULL,
+  `idEmision` INT NOT NULL AUTO_INCREMENT,
   `fecha` DATE NOT NULL,
-  `hora` TIME NULL,
+  `fechaFin` DATE NOT NULL,
+  `horaInicio` TIME NULL,
+  `horaFin` TIME NULL,
+  `enEmision` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`idEmision`))
 ENGINE = InnoDB;
 
