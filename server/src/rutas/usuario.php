@@ -62,3 +62,31 @@ $app->post('/api/usuario/nuevo', function(Request $request, Response $response){
         echo '{"error": {"text":' .$th->getMessage(). '}';
     }
 });
+
+$app->post('/api/usuario/login', function(Request $request, Response $response){
+   
+    $password = $request->getParam('password');
+    $usuario = $request->getParam('usuario');
+
+    $sqlSelect = "SELECT * FROM usuario WHERE usuario = :usuario AND password = :password";
+
+    try {
+        $db = new db();
+        $db = $db->conDB();
+        $resultado = $db->prepare($sqlSelect);
+        $resultado->bindParam(':usuario', $usuario);
+        $resultado->bindParam(':password', $password);
+        $resultado->execute();
+
+        if($resultado !== false) {
+            $response = true;
+        } else {
+            $response = false;
+        }
+        $db = null;
+    } catch (PDOException $th) {
+        echo '{"error": {"text":' .$th->getMessage(). '}';
+    }
+
+    return $response;
+});

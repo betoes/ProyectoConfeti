@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name = "viewport" content="width-device-width">
-    <meta name="author" content="JET" >
-    <link rel="stylesheet" href="../css/estiloIniciarSesion.css">
+    <meta name = "author" content="Jethran Enrique">
+    <link rel="stylesheet" href="css/estiloIniciarSesion.css">
     <title>Inicar sesión</title>
   </head>
   <body>
